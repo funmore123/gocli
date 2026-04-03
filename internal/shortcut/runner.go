@@ -1,4 +1,4 @@
-package skill
+package shortcut
 
 import (
 	"github.com/example/gocli/internal/config"
@@ -6,7 +6,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// Runtime 是 Skill 执行时的上下文，提供 Flag 访问、配置读取、输出能力
+// Runtime 是 Shortcut 执行时的上下文，提供 Flag 访问、配置读取、输出能力
 type Runtime struct {
 	cmd    *cobra.Command
 	Config *config.Config

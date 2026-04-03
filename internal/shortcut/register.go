@@ -1,4 +1,4 @@
-package skill
+package shortcut
 
 import (
 	"context"
@@ -6,9 +6,9 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// RegisterAll 将所有 Skill 挂载到 cobra 命令树上
-func RegisterAll(root *cobra.Command, skills []Skill) {
-	for _, s := range skills {
+// RegisterAll 将所有 Shortcut 挂载到 cobra 命令树上
+func RegisterAll(root *cobra.Command, shortcuts []Shortcut) {
+	for _, s := range shortcuts {
 		parent := root
 		if s.Service != "" {
 			parent = findOrCreateServiceCmd(root, s.Service)
@@ -32,7 +32,7 @@ func findOrCreateServiceCmd(root *cobra.Command, service string) *cobra.Command 
 	return c
 }
 
-func buildCmd(s Skill) *cobra.Command {
+func buildCmd(s Shortcut) *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   s.Command,
 		Short: s.Description,
